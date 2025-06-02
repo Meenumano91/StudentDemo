@@ -2,12 +2,14 @@ package com.may.learn.service;
 
 import com.may.learn.model.Student;
 import com.may.learn.repository.StudentRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GetService {
 
-    StudentRepo studentRepo=new StudentRepo();
+    @Autowired
+    StudentRepo studentRepo;
 
     public Student getStudentById(int id)
     {

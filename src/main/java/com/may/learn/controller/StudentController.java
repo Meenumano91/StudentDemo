@@ -3,12 +3,16 @@ package com.may.learn.controller;
 import com.may.learn.model.Student;
 import com.may.learn.service.GetService;
 import com.may.learn.service.RegistrationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class StudentController {
 
-    RegistrationService registrationService=new RegistrationService();
+    @Autowired
+    RegistrationService registrationService;
+
+    @Autowired
     GetService getService=new GetService();
 
     @PostMapping("/register")
